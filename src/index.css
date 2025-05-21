@@ -4,6 +4,10 @@
   object-fit: cover;
 }
 
+.card-tiny-films img {
+  aspect-ratio: 1/1.5
+}
+
 .card-tiny {
   width: 200px;
   flex: 0 0 auto;

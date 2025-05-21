@@ -17,7 +17,7 @@ export const Card = ({ uid, name, url, what }) => {
   };
 
   return (
-    <div className="card m-1 card-tiny" style={{ minWidth: "200px" }}>
+    <div className={`card m-1 ${what.toLowerCase() == "films"? 'card-tiny-films':'card-tiny'}`} style={{ minWidth: "225px" }}>
       <img
         src={imageUrl}
         className="card-img-top"
@@ -26,9 +26,9 @@ export const Card = ({ uid, name, url, what }) => {
           e.target.src = fallbackImg;
         }}
       />
-      <div className="card-body">
+      {what.toLowerCase() !== "films" && (<div className="card-body">
         <h5 className="card-title">{holdName}</h5>
-      </div>
+      </div>)}
       <div className="d-flex card-footer">
         <Link to={`/details/${what}/${uid}`}>
           <button className="btn btn-outline-info btn-sm" onClick={() => {}}>
