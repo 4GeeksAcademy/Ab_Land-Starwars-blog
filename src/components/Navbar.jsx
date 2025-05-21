@@ -147,10 +147,16 @@ const Navbar = () => {
                   <i className="fas fa-heart" />
 
                   {store.favorites.length > 0 && (
-                    <span className={`position-absolute top-0 start-0 translate-middle badge rounded-pill ${store.theme === "dark" ? 'text-bg-light' : 'text-bg-dark'}`}>
+                    <span
+                      className={`position-absolute top-0 start-0 translate-middle badge rounded-pill ${
+                        store.theme === "dark"
+                          ? "text-bg-light"
+                          : "text-bg-dark"
+                      }`}
+                    >
                       {store.favorites.length}
-                    </span>)}
-                
+                    </span>
+                  )}
                 </button>
 
                 {showFavorites && store.favorites.length > 0 && (
@@ -249,7 +255,13 @@ const Navbar = () => {
                 >
                   <i className="fas fa-heart" />
                   {store.favorites.length > 0 && (
-                    <span className={`position-absolute top-0 start-0 translate-middle badge rounded-pill ${store.theme === "dark" ? 'text-bg-light' : 'text-bg-dark'}`}>
+                    <span
+                      className={`position-absolute top-0 start-0 translate-middle badge rounded-pill ${
+                        store.theme === "dark"
+                          ? "text-bg-light"
+                          : "text-bg-dark"
+                      }`}
+                    >
                       {store.favorites.length}
                     </span>
                   )}

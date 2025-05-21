@@ -2,14 +2,11 @@
   max-width: 100%;
   aspect-ratio: 1/1;
   object-fit: cover;
-
-
 }
 
 .card-tiny {
   width: 200px;
   flex: 0 0 auto;
-
 }
 
 /* Red saber accent for all cards in dark theme */
@@ -25,12 +22,10 @@ body[data-bs-theme="dark"] .card {
 body[data-bs-theme="light"] .card {
   border: 1px solid #70deff !important;
 
-
-  box-shadow: 0 0 6px 2px rgba(53, 220, 128, 0.2)
+  box-shadow: 0 0 6px 2px rgba(53, 220, 128, 0.2);
 }
 
 @media (min-width: 992px) {
-
   /* lg breakpoint in Bootstrap */
   .content-area {
     padding-left: 250px;
@@ -38,12 +33,10 @@ body[data-bs-theme="light"] .card {
 }
 
 .w-20 {
-  width: 20%;  
+  width: 20%;
 }
-.w-50{
+.w-50 {
   overflow: auto;
-  
-
 }
 .w-60-text {
   width: 60%;
@@ -55,7 +48,6 @@ body[data-bs-theme="light"] .card {
 .cover-100-h {
   height: 85vh;
   object-fit: cover;
-
 }
 
 .d-flex-center-vh {
@@ -80,14 +72,15 @@ a {
   --bs-border-color: #70deff;
   --bs-link-color: #00c3ff;
 }
-body{
+body {
   font-family: "Orbitron", sans-serif;
 }
-.navbar-brand{
+.navbar-brand {
   color: #ffc107;
   font-weight: bolder;
-   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
-.navbar-brand:hover{
-  color: #ffe38f
+.navbar-brand:hover {
+  color: #ffe38f;
 }
