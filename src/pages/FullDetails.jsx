@@ -19,7 +19,7 @@ export const FullDetails = () => {
     } else {
       detailsOfGET();
     }
-  }, [what]);
+  }, [what, uid]);
 
   useEffect(() => {
     if (objProperties?.homeworld) {

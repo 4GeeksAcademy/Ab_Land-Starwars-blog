@@ -22,9 +22,11 @@ export const SideBar = () => {
           );
         })}
         <li>
-          <a href="#" className="nav-link ">
-            More
-          </a>
+          <Link to={`not-found`}>
+            <p href="#" className="nav-link ">
+              More
+            </p>
+          </Link>
         </li>
       </ul>
     </>

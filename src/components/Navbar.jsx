@@ -69,7 +69,6 @@ const Navbar = () => {
         <div className="container-fluid">
           {/* Mobile layout */}
           <div className="d-flex d-lg-none align-items-center justify-content-between w-100">
-            {/* Left: Toggler */}
             <button
               className="btn"
               type="button"
@@ -81,14 +80,12 @@ const Navbar = () => {
               <span className="navbar-toggler-icon"></span>
             </button>
 
-            {/* Center: Brand */}
             <div className="flex-grow-1 d-flex justify-content-center">
-              <a className="navbar-brand mb-0 h1" href="/">
-                Star Wars
-              </a>
+              <Link to="/">
+                <p className="navbar-brand">Star Wars</p>
+              </Link>
             </div>
 
-            {/* Right: Icons */}
             <div className="d-flex align-items-center gap-2">
               <div className="position-relative" ref={searchRef}>
                 <button
@@ -123,7 +120,9 @@ const Navbar = () => {
                             key={`${item.uid}-${item.type}`}
                           >
                             <Link
-                              to={`/detail/${item.type}/${item.uid}`}
+                              to={`/details/${item.type.toLowerCase()}/${
+                                item.uid
+                              }`}
                               className="text-decoration-none d-block "
                             >
                               {item.name}{" "}
@@ -139,13 +138,15 @@ const Navbar = () => {
                 )}
               </div>
 
-              <div className="position-relative " ref={favoritesRef}>
+              <div className="position-relative" ref={favoritesRef}>
                 <button
                   className="btn btn-outline-warning btn-sm position-relative"
-                  onClick={() => setShowFavorites((prev) => !prev)}
+                  onClick={(e) => {
+                    e.stopPropagation(); // <== THIS LINE IS KEY
+                    setShowFavorites((prev) => !prev);
+                  }}
                 >
                   <i className="fas fa-heart" />
-
                   {store.favorites.length > 0 && (
                     <span
                       className={`position-absolute top-0 start-0 translate-middle badge rounded-pill ${
@@ -161,8 +162,9 @@ const Navbar = () => {
 
                 {showFavorites && store.favorites.length > 0 && (
                   <ul
-                    className="list-group position-absolute mt-2 end-0 shadow"
+                    className="list-group position-absolute end-0 mt-2 shadow"
                     style={{ minWidth: "250px", zIndex: 1000 }}
+                    onClick={(e) => e.stopPropagation()} // <- prevents accidental closing
                   >
                     {store.favorites.map(({ name, what, uid }, index) => (
                       <li
@@ -207,9 +209,9 @@ const Navbar = () => {
 
           {/* Desktop layout */}
           <div className="collapse navbar-collapse justify-content-between d-none d-lg-flex">
-            <a className="navbar-brand" href="/">
-              Star Wars
-            </a>
+            <Link to="/">
+              <p className="navbar-brand">Star Wars</p>
+            </Link>
 
             <form
               className="d-flex my-1 position-relative"
@@ -235,7 +237,7 @@ const Navbar = () => {
                         key={`${item.uid}-${item.type}`}
                       >
                         <Link
-                          to={`/detail/${item.type}/${item.uid}`}
+                          to={`/details/${item.type.toLowerCase()}/${item.uid}`}
                           className="text-decoration-none d-block "
                         >
                           {item.name}{" "}

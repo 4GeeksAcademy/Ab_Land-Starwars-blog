@@ -20,7 +20,7 @@ export const router = createBrowserRouter(
             Not found In The Light!
           </h1>
         ) : (
-          <h1 className="d-flex-center-vh " data-bs-theme="dark">
+          <h1 className="d-flex-center-vh bg-dark text-danger">
             Not found In The Darkside!
           </h1>
         )
