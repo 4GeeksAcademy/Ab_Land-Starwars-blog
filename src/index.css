@@ -80,3 +80,14 @@ a {
   --bs-border-color: #70deff;
   --bs-link-color: #00c3ff;
 }
+body{
+  font-family: "Orbitron", sans-serif;
+}
+.navbar-brand{
+  color: #ffc107;
+  font-weight: bolder;
+   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+.navbar-brand:hover{
+  color: #ffe38f
+}

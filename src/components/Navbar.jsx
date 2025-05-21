@@ -139,17 +139,18 @@ const Navbar = () => {
                 )}
               </div>
 
-              <div className="position-relative" ref={favoritesRef}>
+              <div className="position-relative " ref={favoritesRef}>
                 <button
-                  className="btn btn-outline-info btn-sm position-relative"
+                  className="btn btn-outline-warning btn-sm position-relative"
                   onClick={() => setShowFavorites((prev) => !prev)}
                 >
                   <i className="fas fa-heart" />
+
                   {store.favorites.length > 0 && (
-                    <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">
+                    <span className={`position-absolute top-0 start-0 translate-middle badge rounded-pill ${store.theme === "dark" ? 'text-bg-light' : 'text-bg-dark'}`}>
                       {store.favorites.length}
-                    </span>
-                  )}
+                    </span>)}
+                
                 </button>
 
                 {showFavorites && store.favorites.length > 0 && (
@@ -183,7 +184,7 @@ const Navbar = () => {
                 <button
                   className={`btn btn-sm ${
                     store.theme === "dark"
-                      ? "btn-outline-warning"
+                      ? "btn-outline-info"
                       : "btn-outline-danger"
                   }`}
                   onClick={() => dispatch({ type: "TOGGLE_THEME" })}
@@ -243,12 +244,12 @@ const Navbar = () => {
             <div className="d-flex align-items-center gap-2">
               <div className="position-relative" ref={favoritesRef}>
                 <button
-                  className="btn btn-outline-info position-relative"
+                  className="btn btn-outline-warning position-relative"
                   onClick={() => setShowFavorites((prev) => !prev)}
                 >
                   <i className="fas fa-heart" />
                   {store.favorites.length > 0 && (
-                    <span className="position-absolute top-50 start-100 translate-middle badge rounded-pill bg-warning">
+                    <span className={`position-absolute top-0 start-0 translate-middle badge rounded-pill ${store.theme === "dark" ? 'text-bg-light' : 'text-bg-dark'}`}>
                       {store.favorites.length}
                     </span>
                   )}
@@ -285,7 +286,7 @@ const Navbar = () => {
                 <button
                   className={`btn ${
                     store.theme === "dark"
-                      ? "btn-outline-warning"
+                      ? "btn-outline-info"
                       : "btn-outline-danger"
                   }`}
                   onClick={() => dispatch({ type: "TOGGLE_THEME" })}
