@@ -304,13 +304,7 @@ export const FullDetails = () => {
               )}
 
               {what.toLowerCase() === "starships" && (
-                <>
-                  <span className="input-group-text">
-                    <span className="ms-0 text-start w-20">Name:</span>
-                    <p className="form-control m-0 mx-auto border-0 w-50">
-                      {objProperties.name}
-                    </p>
-                  </span>
+                <>                  
                   <span className="input-group-text">
                     <span className="ms-0 text-start w-20">Model:</span>
                     <p className="form-control m-0 mx-auto border-0 w-50">
